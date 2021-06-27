@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/RobotoSlabRegular.woff2") format("woff2"), url("../fonts/RobotoSlabRegular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/RobotoSlabBold.woff2") format("woff2"), url("../fonts/RobotoSlabBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/WorkSansRegular.woff2") format("woff2"), url("../fonts/WorkSansRegular.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/WorkSansBold.woff2") format("woff2"), url("../fonts/WorkSansBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}

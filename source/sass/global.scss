@@ -1,0 +1,46 @@
+body {
+  font-family: $font-primary;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $mobile-width;
+  margin: 0 auto;
+}
