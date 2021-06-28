@@ -1,6 +1,8 @@
 .main-header {
-  padding-top: 39px;
-  padding-bottom: 43px;
+  padding-top: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 30px;
 }
 
 .main-header__title {
@@ -10,17 +12,4 @@
   color: $title-green;
   margin: 0;
   margin-left: 399px;
-}
-
-@media (max-width: $tablet-only) {
-  .main-header__title {
-    margin-left: 120px;
-  }
-}
-
-
-@media (max-width: $mobile-only) {
-  .main-header__title {
-    margin: 0
-  }
 }
