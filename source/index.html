@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pro Interactive: Фото на праздник</title>
+  <title>fuse8 Appartments</title>
   <link rel="stylesheet" type="text/css" href="css/style.min.css">
-  <link rel="preload" href="fonts/BebasNeueRegular.woff2" as="font">
-  <link rel="preload" href="fonts/RobotoCondensedRegular.woff2" as="font">
-  <link rel="preload" href="fonts/RobotoCondensedLight.woff2" as="font">
-  <link rel="preload" href="fonts/RobotoCondensedBold.woff2" as="font">
+  <link rel="preload" href="fonts/RobotoSlabBold.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/RobotoSlabRegular.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/WorkSansBold.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/WorkSansRegular.woff2" as="font" crossorigin>
 </head>
 
 <body>
+<div class="body-container">
   <div style="display: none;">
     <include src="build/img/sprite.svg"></include>
   </div>
+  <header class="main-header container">
+    <svg width="63" height="60" viewBox="0 0 63 60" fill="none">
+      <use xlink:href="#logo"></use>
+    </svg>
+  </header>
+  <main class="main-body container">
 
-  <script src="js/script.js"></script>
-  <script src="js/swiper.min.js"></script>
+  </main>
+</div>
+
+<script src="js/vendor.min.js"></script>
+<script src="js/main.min.js"></script>
 </body>
-
 </html>

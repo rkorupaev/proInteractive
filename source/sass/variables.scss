@@ -2,15 +2,27 @@
 $mobile-width: 375px;
 
 //colors
+$title-green: #45852D;
+$main-black: #363636;
+$border-grey: #D8D8D8;
+$border-hover: #007aff;
 $white: #ffffff;
-$black: #102654;
+$background-color-dark-green: #006F79;
+$background-color-orange: #EC6608;
+$error-background-red: #FFCCCC;
+
 
 //font-family
-$font-primary: "Work Sans", "Arial", sans-serif;
-$side-text: "Roboto Slab", "Arial", sans-serif;
+$font-primary: "Work Sans",
+"Arial",
+sans-serif;
+$side-text: "Roboto Slab",
+"Arial",
+sans-serif;
 
 //retina stats
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
+
 
 //animation

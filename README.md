@@ -1,2 +1,3 @@
-# proInteractive
-Test project for Pro Interactive ( html, css, js, sass)
+Test project for fuse8 (js, html, css, ajax query)
+
+Take "Build" folder to start the page.

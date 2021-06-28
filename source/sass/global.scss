@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font-primary;
   box-sizing: border-box;
@@ -36,6 +40,9 @@ a {
   flex-direction: column;
 
   align-items: center;
+  color: $main-black;
+
+  margin: 0 auto;
 }
 
 .container {
@@ -43,4 +50,12 @@ a {
   width: 100%;
   max-width: $mobile-width;
   margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
