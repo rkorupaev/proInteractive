@@ -1,0 +1,91 @@
+.features-block {
+  padding: 0 16px;
+  margin-bottom: 80px;
+}
+
+.features-block__title {
+  font-family: $side-text;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 53px;
+
+  margin: 0;
+  margin-bottom: 20px;
+
+  &-red {
+    color: $main-red;
+  }
+}
+
+.features-block__text {
+  font-family: $font-primary;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 20px;
+
+  &-red {
+    color: $main-red;
+    text-decoration: underline;
+  }
+}
+
+.features-block__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.features-block__item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 156px;
+  min-height: 84px;
+  margin-right: 16px;
+  margin-bottom: 35px;
+
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  background-repeat: no-repeat;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-of-type(-n + 2) {
+    margin-bottom: 0;
+  }
+
+  & p {
+    width: 143px;
+  }
+
+  &--width p {
+    width: 124px;
+  }
+
+  &--infinity {
+    background-image: url("../img/infinity.png");
+    background-position: 58px 17px;
+  }
+
+  &--mustache {
+    background-image: url("../img/mustaches.png");
+    background-position: 58px 0px;
+  }
+
+  &--photos {
+    background-image: url("../img/photos.png");
+    background-position: 58px 17px;
+  }
+
+  &--prices {
+    background-image: url("../img/price_label.png");
+    background-position: 58px 17px;
+  }
+}
