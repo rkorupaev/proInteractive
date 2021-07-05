@@ -19,6 +19,7 @@ p {
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 a {
@@ -50,6 +51,8 @@ a {
   width: 100%;
   max-width: $mobile-width;
   margin: 0 auto;
+
+  background-color: $main-background;
 }
 
 .visually-hidden {
