@@ -62,3 +62,16 @@ a {
   height: 1px;
   margin: -1px;
 }
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $main-red;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.7;
+}

@@ -1,5 +1,6 @@
 .extra-options {
   min-height: 166px;
+  margin-bottom: 10px;
 }
 
 .extra-options__title {
@@ -19,6 +20,11 @@
   align-items: center;
 }
 
+.extra-options__list {
+  height: 152px;
+  overflow-y: auto;
+}
+
 .extra-options__item {
   background-color: $main-background;
   border-bottom: 1px solid $border-gray;
@@ -29,7 +35,6 @@
 }
 
 .extra-options__item-label {
-  box-sizing: border-box;
   cursor: pointer;
   position: relative;
   display: flex;
@@ -90,14 +95,11 @@
 
 .extra-option__item-custom-checkbox {
   position: absolute;
+  box-sizing: border-box;
   top: 31px;
   right: 8px;
   height: 15px;
   width: 15px;
   border: 1px solid $main-red;
   border-radius: 2px;
-}
-
-.extra-option__item-checkbox:checked + label::before {
-  background-color: #EE3D48;
 }

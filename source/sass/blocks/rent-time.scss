@@ -1,0 +1,26 @@
+.rent-time__title {
+  font-family: $font-primary;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $text-grey;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.rent-time__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rent-time__item {
+  min-height: 18px;
+  padding: 4px 12px;
+  margin-right: 8px;
+  background-color: $main-red;
+  border-radius: 6px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
