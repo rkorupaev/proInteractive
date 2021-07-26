@@ -1,0 +1,35 @@
+.price-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-block__price {
+  font-family: $side-text;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  color: $main-black;
+  margin-right: 20px;
+}
+
+.price-block__button {
+  width: 167px;
+  min-height: 40px;
+  border-radius: 6px;
+  background-color: $main-red;
+  color: $white;
+  font-family: $roboto;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  transition-duration: 0.3s;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
