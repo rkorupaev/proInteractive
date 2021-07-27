@@ -1,3 +1,5 @@
+import Swiper from "swiper";
+
 const photoBoothSwiper = (el) => {
   return new Swiper(el, {
     // Optional parameters
@@ -13,7 +15,7 @@ const photoBoothSwiper = (el) => {
   });
 };
 
-const photoBoothItem = document.querySelector('.photo-booth__slider');
+const photoBoothItem = document.querySelector('.swiper-container');
 
 if (photoBoothItem) {
   photoBoothSwiper(photoBoothItem);

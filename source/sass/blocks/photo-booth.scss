@@ -1,9 +1,33 @@
 .photo-booth__title {
   padding: 0 16px;
+  margin: 0;
+  margin-bottom: 19px;
+  font-family: $side-text;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 42px;
 }
 
 .photo-booth__filter-wrapper {
   padding: 0 16px;
+  display: flex;
+  align-items: baseline;
+
+  min-height: 16px;
+
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.photo-booth__filter-text {
+  color: $main-black;
+  margin-right: 5px;
+}
+
+.photo-booth__filter-select {
+  color: $text-grey;
 }
 
 .photo-booth__item {
