@@ -22,10 +22,6 @@
   margin-bottom: 20px;
 }
 
-.news__image {
-  margin-bottom: 20px;
-}
-
 .news__services {
   font-weight: 500;
   font-size: 12px;
@@ -39,8 +35,13 @@
   margin-bottom: 30px;
 }
 
+.news__text-wrapper {
+  padding: 20px 8px;
+}
+
 .news__item {
   margin-bottom: 20px;
+  background-color: $main-background;
 
   &:last-child {
     margin-bottom: 0;
