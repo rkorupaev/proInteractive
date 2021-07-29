@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.min.css">
   <link rel="preload" href="fonts/RobotoSlabBold.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/RobotoSlabRegular.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/RobotoBold.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/WorkSansBold.woff2" as="font" crossorigin>
   <link rel="preload" href="fonts/WorkSansRegular.woff2" as="font" crossorigin>
 </head>
@@ -169,24 +170,36 @@
       <h2 class="main-footer__title">Контакты</h2>
       <ul class="main-footer__list">
         <li class="main-footer__item">
-          <span class="main-footer__item-icon"></span>
+          <span class="main-footer__item-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <use xlink:href="#phone"></use>
+            </svg>
+          </span>
           <h3 class="main-footer__item-title">Телефон</h3>
-          <p class="main-footer__item-text">+7 495 123 45 67</p>
+          <a class="main-footer__item-text" href="tel:+7 495 123 45 67">+7 495 123 45 67</a>
         </li>
         <li class="main-footer__item">
-          <span class="main-footer__item-icon"></span>
-          <h3 class="main-footer__item-title"></span>Адрес</h3>
+          <span class="main-footer__item-icon">
+            <svg width="19" height="27" viewBox="0 0 19 27" fill="none">
+              <use xlink:href="#pin"></use>
+            </svg>
+          </span>
+          <h3 class="main-footer__item-title">Адрес</h3>
           <p class="main-footer__item-text">109382, Москва, пр. Егорьевский, д.2а, стр.10 въезд на машине только с улицы
             Люблинская</p>
         </li>
         <li class="main-footer__item">
-          <span class="main-footer__item-icon"></span>
+          <span class="main-footer__item-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <use xlink:href="#email"></use>
+            </svg>
+          </span>
           <h3 class="main-footer__item-title">Почта</h3>
-          <p class="main-footer__item-text">Info@test.ru</p>
+          <a class="main-footer__item-text main-footer__item-text--underline" href="mailto: Info@test.ru">Info@test.ru</a>
         </li>
       </ul>
     </div>
-    <div class="main-footer__map"></div>
+    <div class="main-footer__map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1b97a04e7331790991a43985e7d598975ac27abd4a9bd941dcacab9270473858&amp;source=constructor" width="360" height="360" frameborder="0"></iframe></div>
   </footer>
 </div>
 
