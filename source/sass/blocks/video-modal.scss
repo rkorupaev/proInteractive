@@ -1,0 +1,65 @@
+.video-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1050;
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.video-modal__dialog {
+  position: relative;
+  width: auto;
+  margin: 16px;
+  background: $white;
+  border-radius: 15px;
+}
+
+.video-modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-clip: padding-box;
+  padding: 10px;
+}
+
+.video-modal__close-button {
+  position: absolute;
+  font-family: sans-serif;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 1;
+  color: $main-red;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  transition-duration: 0.3s;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    opacity: 0.85;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

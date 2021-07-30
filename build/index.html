@@ -27,7 +27,7 @@
     <h1 class="visually-hidden">Фотобудки для вашего праздника</h1>
     <section class="main-body__video-block video-block">
       <div class="video-block__wrapper">
-        <a class="video-block__inner-block" href="#modal-video">
+        <a class="video-block__inner-block" href="#video-modal">
           <div class="video-block__button" aria-label="Start video"></div>
         </a>
       </div>
@@ -200,7 +200,17 @@
     </div>
   </footer>
 </div>
+<section id="video-modal" class="video-modal" aria-modal="true">
+  <div class="video-modal__dialog">
+    <div class="video-modal__content">
+      <a href="#close" title="Close" class="video-modal__close-button">×</a>
+      <div class="video-modal__body">
+        <iframe width="315" height="188" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      </div>
 
+    </div>
+  </div>
+</section>
 <script src="js/vendor.min.js"></script>
 <script src="js/main.min.js"></script>
 </body>
