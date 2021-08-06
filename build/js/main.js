@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./js/modules/index.js?");
+eval("// selector of all videos on the page\nvar videos = document.querySelectorAll('.video-modal__video-placeholder'); // generate video url\n\nvar generateUrl = function generateUrl(id) {\n  var query = '?rel=0&showinfo=0&autoplay=1';\n  return 'https://www.youtube.com/embed/' + id + query;\n}; // creating iframe\n\n\nvar createIframe = function createIframe(id) {\n  var iframe = document.createElement('iframe');\n  iframe.setAttribute('allowfullscreen', '');\n  iframe.setAttribute('allow', 'autoplay; encrypted-media');\n  iframe.setAttribute('src', generateUrl(id));\n  iframe.setAttribute(\"width\", \"315\");\n  iframe.setAttribute(\"height\", \"188\");\n  return iframe;\n}; // main code\n\n\nvideos.forEach(function (el) {\n  var videoHref = el.getAttribute('data-video');\n  var deletedLength = 'https://youtu.be/'.length;\n  var videoId = videoHref.substring(deletedLength, videoHref.length);\n  var placeholderImg = el.querySelector('.video-placeholder__image');\n  var youtubeImgSrc = 'https://i.ytimg.com/vi/' + videoId + '/maxresdefault.jpg';\n  placeholderImg.setAttribute('src', youtubeImgSrc);\n  var mainBodyVideoBlockPlaceHolder = document.querySelector(\".video-block__inner-block\");\n  mainBodyVideoBlockPlaceHolder.style.backgroundImage = \"url(\" + youtubeImgSrc + \")\";\n  el.addEventListener('click', function (e) {\n    e.preventDefault();\n    var iframe = createIframe(videoId);\n    el.querySelector('.video-placeholder__image').remove();\n    el.appendChild(iframe);\n    el.querySelector('.video-placeholder__button').remove();\n  });\n});\n\n//# sourceURL=webpack:///./js/modules/index.js?");
 
 /***/ })
 

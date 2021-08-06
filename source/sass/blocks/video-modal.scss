@@ -52,6 +52,7 @@
   width: 25px;
   height: 25px;
   transition-duration: 0.3s;
+  z-index: 1;
 
   &:focus,
   &:hover {
