@@ -14,10 +14,11 @@
 
 .photo-booth__filter-wrapper {
   padding: 0 16px;
+  margin-bottom: 4px;
   display: flex;
   align-items: baseline;
 
-  min-height: 16px;
+  min-height: 32px;
 
   font-family: $font-primary;
   font-weight: 500;
@@ -30,14 +31,34 @@
   margin-right: 5px;
 }
 
-.photo-booth__filter-select {
+.photo-booth__filter-select,
+.photo-booth__select-default-value {
   color: $text-grey;
+}
+
+.photo-booth__select-default-value {
+  cursor: pointer;
+}
+
+.photo-booth__filter-select {
+  display: none;
+}
+
+.photo-booth__filter-item {
+  cursor: pointer;
+  transition-duration: 0.2s;
+
+  &:hover,
+  &:focus {
+    background-color: $main-red;
+    color: $white;
+  }
 }
 
 .photo-booth__item {
   background-color: $white;
   padding: 0 16px;
-  box-shadow: 0 4px 5px -4px rgba(0, 0, 0 , 39%);
+  box-shadow: 0 4px 5px -4px rgba(0, 0, 0, 39%);
 }
 
 .photo-booth__slider {

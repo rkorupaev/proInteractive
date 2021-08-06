@@ -47,10 +47,12 @@
       <h2 class="photo-booth__title">Фотобудки</h2>
       <div class="photo-booth__filter-wrapper">
         <p class="photo-booth__filter-text">Сортировка: </p>
-        <select class="photo-booth__filter-select">
-          <option value="По возрастанию" selected>По возрастанию</option>
-          <option value="По убыванию">По убыванию</option>
-        </select>
+        <p class="photo-booth__select-default-value">По умолчанию</p>
+        <ul class="photo-booth__filter-select">
+          <li class="photo-booth__filter-item" value="priceup">По возрастанию</li>
+          <li class="photo-booth__filter-item" value="pricedown">По убыванию</li>
+        </ul>
+        <span class="photo-booth__filter-arrow"></span>
       </div>
       <ul class="photo-booth__list">
         <li class="photo-booth__item">
