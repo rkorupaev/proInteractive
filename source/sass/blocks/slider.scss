@@ -4,18 +4,19 @@
   height: 238px;
 
   & .slider__pagination {
-    bottom: -4px;
+    bottom: -2px;
+  }
+}
 
-    & .swiper-pagination-bullet {
-      width: 8px;
-      height: 4px;
-      border-radius: 10px;
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 4px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
 
-      &-active {
-        background-color: $main-red;
-        transform: scale(1.2);
-      }
-    }
+  &-active {
+    background-color: $main-red;
+    transform: scale(1.2);
   }
 }
 

@@ -103,8 +103,8 @@
 
   &--active {
     transform: rotate(225deg);
-    background-color: white;
-    margin-bottom: -3px;
+    margin-bottom: -5px;
+    background-color: $white;
 
     &:after {
       background-color: $main-red;

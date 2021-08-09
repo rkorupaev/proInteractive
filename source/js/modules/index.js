@@ -119,3 +119,20 @@ const swiper = new SwiperCore('.swiper-container', {
     prevEl: '.swiper-button-prev',
   }
 });
+
+
+//faq setup
+const faqItemsList = document.querySelectorAll(`.faq__item`);
+
+faqItemsList.forEach((item, index) => {
+  item.addEventListener(`click`, evt => {
+    const hidedText = item.querySelector(`.faq__hiding-text`);
+    const faqArrow = item.querySelector(`.faq__item-arrow`);
+    const faqTitleWrapper = item.querySelector(`.faq__title-wrapper`);
+    hidedText.classList.toggle(`faq__hiding-text--active`);
+    item.classList.toggle(`faq__item--active`);
+    faqArrow.classList.toggle(`faq__item-arrow--active`);
+    faqTitleWrapper.classList.toggle(`faq__title-wrapper--active`);
+  });
+});
+
