@@ -76,3 +76,24 @@ selectArrow.addEventListener(`click`, evt => {
   openSelectMenu();
 });
 
+// map photo-booth card
+for (let i = 0; i < 3; i++) {
+  const block = document.querySelector(`.photo-booth__list`);
+  const card = document.createElement(`li`);
+
+  card.classList.add(`photo-booth__item`);
+  card.append(document.getElementById(`photo-booth-card`).content.cloneNode(true));
+
+  for (let j = 0; j < 5; j++) {
+    const extraOptionsBlock = card.querySelector(`.extra-options__list`);
+    const extraOption = document.createElement(`li`);
+    extraOption.classList.add(`extra-options__item`);
+    extraOption.append(document.getElementById(`extra-option`).content.cloneNode(true));
+    extraOption.querySelector(`.extra-options__item-title`).textContent = `Разработка макета рамки #` + (j + 1);
+    extraOption.querySelector(`.extra-options__item-price`).textContent = `от `+ (17500 + 100 * j)  + `₽`;
+
+    extraOptionsBlock.append(extraOption);
+  }
+
+  block.append(card);
+}
