@@ -1,0 +1,44 @@
+.slider {
+  margin: 0;
+  width: 100%;
+  height: 238px;
+
+  & .slider__pagination {
+    bottom: -4px;
+
+    & .swiper-pagination-bullet {
+      width: 8px;
+      height: 4px;
+      border-radius: 10px;
+
+      &-active {
+        background-color: $main-red;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.slider__wrapper {
+  height: 222px;
+}
+
+.slider__item {
+
+  & img {
+    height: 100%;
+  }
+}
+
+.slider__next,
+.slider__prev {
+  background-color: $slider-button-background;
+  border-radius: 2px;
+  width: 40px;
+  height: 40px;
+
+  &:after {
+    font-size: 28px;
+    color: $white;
+  }
+}

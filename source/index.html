@@ -155,56 +155,68 @@
       </div>
     </div>
   </div>
-  <template id="extra-option">
-    <li class="extra-options__item">
-      <label class="extra-options__item-label">
-        <img class="extra-options__item-image" src="./img/photo_option.png" alt="photo-booth photo" width="60"
-             height="60">
-        <div class="extra-options__text-wrapper">
-          <h2 class="extra-options__item-title">Разработка макета рамки</h2>
-          <p class="extra-options__item-price">от 17 500 ₽</p>
-        </div>
-        <input class="extra-option__item-checkbox" type="checkbox">
-        <span class="extra-option__item-custom-checkbox"></span>
-      </label>
-  </template>
-  <template id="photo-booth-card">
-      <h3 class="photo-booth__subtitle">Фотобудка с ширмой</h3>
-      <p class="photo-booth__size-block">Размер: <span>2м x 1.5м x 2 м</span></p>
-      <div class="photo-booth__extra-options extra-options">
-        <h2 class="extra-options__title">Доп. опции</h2>
-        <ul class="extra-options__list">
-        </ul>
-      </div>
-      <div class="photo-booth__rent-time rent-time">
-        <h2 class="rent-time__title">Укажите время аренды</h2>
-        <ul class="rent-time__list">
-          <li>
-            <button class="rent-time__item">1 час</button>
-          </li>
-          <li>
-            <button class="rent-time__item">2 часа</button>
-          </li>
-          <li>
-            <button class="rent-time__item">3 часа</button>
-          </li>
-          <li>
-            <button class="rent-time__item">5 часов</button>
-          </li>
-          <li>
-            <button class="rent-time__item">выставка 2 дня</button>
-          </li>
-          <li>
-            <button class="rent-time__item">выставка 3 дня</button>
-          </li>
-        </ul>
-      </div>
-      <div class="photo-booth__price-block price-block">
-        <p class="price-block__price"><span>17000</span> ₽</p>
-        <a href="#mobile-order" class="price-block__button">Оставить заявку</a>
-      </div>
-  </template>
 </section>
+<template id="extra-option">
+  <li class="extra-options__item">
+    <label class="extra-options__item-label">
+      <img class="extra-options__item-image" src="./img/photo_option.png" alt="photo-booth photo" width="60"
+           height="60">
+      <div class="extra-options__text-wrapper">
+        <h2 class="extra-options__item-title">Разработка макета рамки</h2>
+        <p class="extra-options__item-price">от 17 500 ₽</p>
+      </div>
+      <input class="extra-option__item-checkbox" type="checkbox">
+      <span class="extra-option__item-custom-checkbox"></span>
+    </label>
+</template>
+<template id="photo-booth-card">
+  <div class="photo-booth__slider slider swiper-container">
+    <ul class="slider__wrapper swiper-wrapper">
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
+    </ul>
+    <div class="slider__pagination swiper-pagination"></div>
+    <div class="slider__prev swiper-button-prev"></div>
+    <div class="slider__next swiper-button-next"></div>
+  </div>
+  <h3 class="photo-booth__subtitle">Фотобудка с ширмой</h3>
+  <p class="photo-booth__size-block">Размер: <span>2м x 1.5м x 2 м</span></p>
+  <div class="photo-booth__extra-options extra-options">
+    <h2 class="extra-options__title">Доп. опции</h2>
+    <ul class="extra-options__list">
+    </ul>
+  </div>
+  <div class="photo-booth__rent-time rent-time">
+    <h2 class="rent-time__title">Укажите время аренды</h2>
+    <ul class="rent-time__list">
+      <li>
+        <button class="rent-time__item">1 час</button>
+      </li>
+      <li>
+        <button class="rent-time__item">2 часа</button>
+      </li>
+      <li>
+        <button class="rent-time__item">3 часа</button>
+      </li>
+      <li>
+        <button class="rent-time__item">5 часов</button>
+      </li>
+      <li>
+        <button class="rent-time__item">выставка 2 дня</button>
+      </li>
+      <li>
+        <button class="rent-time__item">выставка 3 дня</button>
+      </li>
+    </ul>
+  </div>
+  <div class="photo-booth__price-block price-block">
+    <p class="price-block__price"><span>17000</span> ₽</p>
+    <a href="#mobile-order" class="price-block__button">Оставить заявку</a>
+  </div>
+</template>
 <script src="js/vendor.min.js"></script>
 <script src="js/main.min.js"></script>
 </body>
