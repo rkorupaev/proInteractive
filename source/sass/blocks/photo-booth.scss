@@ -16,7 +16,7 @@
   padding: 0 16px;
   margin-bottom: 4px;
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
 
   min-height: 32px;
 
@@ -36,17 +36,17 @@
   color: $text-grey;
 }
 
-.photo-booth__select-default-value {
-  cursor: pointer;
-}
-
 .photo-booth__filter-select {
   display: none;
 }
 
-.photo-booth__filter-item {
+.photo-booth__filter-item,
+.photo-booth__select-default-value {
   cursor: pointer;
   transition-duration: 0.2s;
+  border-radius: 6px;
+  padding: 0 5px;
+  min-width: 117px;
 
   &:hover,
   &:focus {
@@ -64,4 +64,33 @@
 .photo-booth__slider {
   width: 292px;
   min-height: 222px;
+}
+
+.photo-booth__filter-arrow {
+  cursor: pointer;
+  position: relative;
+  margin-left: 10px;
+  margin-top: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: $main-red;
+  transform: rotate(45deg);
+  transition-duration: 0.3s;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color:$white;
+    top: -1px;
+    left: -1px;
+  }
+
+  &--active {
+    transform: rotate(225deg);
+    margin-top: 5px;
+  }
 }

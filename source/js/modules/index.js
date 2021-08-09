@@ -47,17 +47,32 @@ videos.forEach(el => {
 const selectDefaultValue = document.querySelector(`.photo-booth__select-default-value`);
 const selectList = document.querySelector(`.photo-booth__filter-select`);
 const selectListItems = document.querySelectorAll(`.photo-booth__filter-select li`);
+const selectArrow = document.querySelector(`.photo-booth__filter-arrow`);
 
-selectDefaultValue.addEventListener(`click`, evt => {
+const openSelectMenu = () => {
   selectDefaultValue.style.display = `none`;
   selectList.style.display = `block`;
+  selectArrow.classList.add(`photo-booth__filter-arrow--active`);
+}
+
+const closeSelectMenu = (item) => {
+  selectDefaultValue.textContent = item.textContent;
+  selectDefaultValue.style.display = `block`;
+  selectList.style.display = `none`;
+  selectArrow.classList.remove(`photo-booth__filter-arrow--active`);
+}
+
+selectDefaultValue.addEventListener(`click`, evt => {
+  openSelectMenu();
 });
 
 selectListItems.forEach(item => {
   item.addEventListener(`click`, evt => {
-    selectDefaultValue.textContent = item.textContent;
-    selectDefaultValue.style.display = `block`;
-    selectList.style.display = `none`;
+    closeSelectMenu(item);
   })
+});
+
+selectArrow.addEventListener(`click`, evt => {
+  openSelectMenu();
 });
 
