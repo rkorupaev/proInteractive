@@ -4,7 +4,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1050;
   opacity: 0;
   transition: opacity 200ms ease-in;
@@ -19,6 +19,7 @@
 
 .gallery-modal__slider {
   margin-bottom: 12px;
+  height: 340px;
 }
 
 .gallery-modal:target {
@@ -76,13 +77,20 @@
 .gallery-modal__prev {
   left: -10px;
   top: 108px;
+
+  &:after {
+    color: $close-button-color;
+  }
 }
 
 .gallery-modal__next {
   right: -10px;
   top: 108px;
-}
 
+  &:after {
+    color: $close-button-color;
+  }
+}
 
 .gallery-modal__text-wrapper {
   padding: 0 12px;
@@ -126,4 +134,8 @@
 .gallery-modal__text-red {
   color: $main-red;
   text-decoration: underline;
+}
+
+.gallery-modal__slider-item {
+  height: 320px;
 }

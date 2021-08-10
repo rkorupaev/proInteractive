@@ -85,12 +85,14 @@ for (let i = 0; i < 3; i++) {
   card.append(document.getElementById(`photo-booth-card`).content.cloneNode(true));
 
   for (let j = 0; j < 5; j++) {
+    const cardPrice = 17500 + 100 * j;
     const extraOptionsBlock = card.querySelector(`.extra-options__list`);
     const extraOption = document.createElement(`li`);
     extraOption.classList.add(`extra-options__item`);
     extraOption.append(document.getElementById(`extra-option`).content.cloneNode(true));
     extraOption.querySelector(`.extra-options__item-title`).textContent = `Разработка макета рамки #` + (j + 1);
-    extraOption.querySelector(`.extra-options__item-price`).textContent = `от ` + (17500 + 100 * j) + `₽`;
+    extraOption.querySelector(`.extra-options__item-price`).textContent = `от ` + cardPrice + `₽`;
+    extraOption.querySelector(`.extra-option__item-checkbox`).value = cardPrice;
 
     extraOptionsBlock.append(extraOption);
   }
@@ -138,7 +140,7 @@ faqItemsList.forEach((item, index) => {
 });
 
 //map news cards
-const MAX_NEWS_LENGTH = 9;
+const MAX_NEWS_LENGTH = 20;
 const NEWS_PER_CLICK = 3;
 
 const mapNews = (cardCount) => {
@@ -170,4 +172,23 @@ showMoreNewsButton.addEventListener('click', (evt) => {
     showMoreNewsButton.style.display = `none`;
   }
 });
+
+//get card price
+const DEFAULT_PRICE = 17000;
+const extraOptionsList = document.querySelectorAll(`.extra-options__list`);
+const cardTotalPrice = document.querySelectorAll(`.price-block__price span`);
+
+extraOptionsList.forEach((list, index) => {
+  list.addEventListener('click', (evt) => {
+    if (evt.target.className === `extra-option__item-checkbox`) {
+      let totalExtraOptionsPrice = 0;
+      const checkedOptions = list.querySelectorAll(`input[type="checkbox"]:checked`);
+      checkedOptions.forEach(item => {
+        totalExtraOptionsPrice += parseInt(item.value, 10);
+      });
+      cardTotalPrice[index].textContent = DEFAULT_PRICE + totalExtraOptionsPrice;
+    }
+  });
+});
+
 
