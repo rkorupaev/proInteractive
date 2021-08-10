@@ -31,8 +31,30 @@
   margin-bottom: 4px;
 }
 
-.news__list {
+.news__link {
   margin-bottom: 30px;
+  flex-direction: column;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    top: 315px;
+    left: 5px;
+
+    background-image: url("../img/white-triangle.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 6px 9px -4px rgba(0, 0, 0, 0.39);
+  }
 }
 
 .news__text-wrapper {

@@ -29,6 +29,11 @@
 
   box-shadow: 0 6px 9px -4px rgba(0, 0, 0, 0.39);
 
+  &:hover,
+  &:focus {
+    box-shadow: 0 9px 9px -4px rgba(0, 0, 0, 0.79);
+  }
+
   &--active {
     box-shadow: none;
   }

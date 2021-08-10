@@ -95,47 +95,14 @@
               загоКакой то текст для заголовка Какой то текст для заго</p>
           </div>
         </li>
-        <li class="faq__item">
-          <div class="faq__title-wrapper">
-            <h3 class="faq__item-title">Какой реквизит идет в комплекте?<span class="faq__item-arrow"></span></h3>
-          </div>
-          <div class="faq__hiding-text">
-            <p class="faq__item-text">Какой то текст для заголовка Какой то текст для заго Какой то текст для заголовка
-              Какой то текст для
-              загоКакой то текст для заголовка Какой то текст для заго Какой то текст для заголовка Какой то текст для
-              загоКакой то текст для заголовка Какой то текст для заго</p>
-          </div>
-        </li>
-        <li class="faq__item">
-          <div class="faq__title-wrapper">
-            <h3 class="faq__item-title">Какой реквизит идет в комплекте?<span class="faq__item-arrow"></span></h3>
-          </div>
-          <div class="faq__hiding-text">
-            <p class="faq__item-text">Какой то текст для заголовка Какой то текст для заго Какой то текст для заголовка
-              Какой то текст для
-              загоКакой то текст для заголовка Какой то текст для заго Какой то текст для заголовка Какой то текст для
-              загоКакой то текст для заголовка Какой то текст для заго</p>
-          </div>
-        </li>
-
       </ul>
     </section>
     <section class="news">
       <p class="news__sub-title">Почему выбирают нас?</p>
       <h2 class="news__title">Новости</h2>
       <ul class="news__list">
-        <li class="news__item">
-          <img src="../img/news-photo.png" alt="news preview photo" width="328" height="328" class="news__image">
-          <div class="news__text-wrapper">
-            <p class="news__services">Услуги</p>
-            <h3 class="news__item-title">Фотобудки, GIF стойка</h3>
-            <p class="news__item-text">У нас есть широчайший ассортимент фотобудок на
-              все случаи жизни</p>
-            <p class="news__date">20 Марта 2021</p>
-          </div>
-        </li>
       </ul>
-      <button type="submit" class="news__button">Показать еще</button>
+      <button type="button" class="news__button">Показать еще</button>
     </section>
   </main>
   <footer class="main-footer container">
@@ -217,11 +184,16 @@
 <template id="photo-booth-card">
   <div class="photo-booth__slider slider swiper-container">
     <ul class="slider__wrapper swiper-wrapper">
-      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
-      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
-      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
-      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
-      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296" height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296"
+                                                 height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296"
+                                                 height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296"
+                                                 height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296"
+                                                 height="222"></li>
+      <li class="slider__item swiper-slide"><img src="../img/slider-image.png" alt="photo booth example" width="296"
+                                                 height="222"></li>
     </ul>
     <div class="slider__pagination swiper-pagination"></div>
     <div class="slider__prev swiper-button-prev"></div>
@@ -261,6 +233,18 @@
     <p class="price-block__price"><span>17000</span> ₽</p>
     <a href="#mobile-order" class="price-block__button">Оставить заявку</a>
   </div>
+</template>
+<template id="news-card">
+  <a href="#gallery" class="news__link">
+    <img src="../img/news-photo.png" alt="news preview photo" width="328" height="328" class="news__image">
+    <div class="news__text-wrapper">
+      <p class="news__services">Услуги</p>
+      <h3 class="news__item-title">Фотобудки, GIF стойка</h3>
+      <p class="news__item-text">У нас есть широчайший ассортимент фотобудок на
+        все случаи жизни</p>
+      <p class="news__date">20 Марта 2021</p>
+    </div>
+  </a>
 </template>
 <script src="js/vendor.min.js"></script>
 <script src="js/main.min.js"></script>
