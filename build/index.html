@@ -164,6 +164,41 @@
     </div>
   </div>
 </section>
+<section id="gallery-modal" class="gallery-modal" aria-modal="true">
+  <div class="gallery-modal__dialog">
+    <div class="gallery-modal__content">
+      <a href="#close" title="Close" class="gallery-modal__close-button">×</a>
+      <div class="slider__prev swiper-button-prev gallery-modal__prev"></div>
+      <div class="slider__next swiper-button-next gallery-modal__next"></div>
+      <div class="gallery-modal__body">
+        <div class="gallery-modal__slider slider swiper-container">
+          <ul class="slider__wrapper swiper-wrapper">
+            <li class="slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo" width="320" height="320"></li>
+            <li class="slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo" width="320" height="320"></li>
+            <li class="slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo" width="320" height="320"></li>
+            <li class="slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo" width="320" height="320"></li>
+            <li class="slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo" width="320" height="320"></li>
+          </ul>
+          <div class="slider__pagination swiper-pagination"></div>
+        </div>
+        <div class="gallery-modal__text-wrapper">
+          <div class="gallery-modal__subtitle-date-wrapper">
+            <p class="gallery-modal__subtitle">Фотобудка</p>
+            <p class="gallery-modal__date">20 Марта 2021</p>
+          </div>
+          <h3 class="gallery-modal__title">Название события</h3>
+          <p class="gallery-modal__text">Lorem ipsum dolor sit amet, consectetur <span class="gallery-modal__text-red">adipiscing elit</span>,
+            sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui
+            officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <template id="extra-option">
   <li class="extra-options__item">
     <label class="extra-options__item-label">
@@ -225,7 +260,7 @@
   </div>
 </template>
 <template id="news-card">
-  <a href="#gallery" class="news__link">
+  <a href="#gallery-modal" class="news__link">
     <img src="../img/news-photo.png" alt="news preview photo" width="328" height="328" class="news__image">
     <div class="news__text-wrapper">
       <p class="news__services">Услуги</p>
