@@ -100,6 +100,20 @@ for (let i = 0; i < 3; i++) {
   block.append(card);
 }
 
+// rent time activation
+const rentTimeButtonBlock = document.querySelectorAll(`.rent-time__list`);
+rentTimeButtonBlock.forEach(item => {
+  item.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains(`rent-time__item`)) {
+      const activeButton = item.querySelector(`.rent-time__item--active`);
+      if (activeButton) {
+        activeButton.classList.remove('rent-time__item--active');
+      }
+      evt.target.classList.toggle(`rent-time__item--active`);
+    }
+  });
+});
+
 // swiper initiation
 import SwiperCore, {Navigation, Pagination} from 'swiper/core';
 
@@ -190,5 +204,3 @@ extraOptionsList.forEach((list, index) => {
     }
   });
 });
-
-
