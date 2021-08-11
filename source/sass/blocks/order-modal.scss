@@ -1,0 +1,209 @@
+.order-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.order-modal__dialog {
+  position: relative;
+  width: 100%;
+  max-width: 375px;
+  background: $white;
+}
+
+.order-modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-clip: padding-box;
+}
+
+.order-modal__close-button {
+  position: absolute;
+  font-family: sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1;
+  top: 27px;
+  right: 25px;
+  width: 28px;
+  height: 20px;
+  transition-duration: 0.3s;
+  z-index: 5;
+  color: $faq-text-grey;
+
+  &--red {
+    position: relative;
+    width: 100%;
+    min-height: 40px;
+
+    font-family: $side-text;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: $white;
+    top: 0;
+    right: 0;
+    border-radius: 6px;
+    background-color: $main-red;
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    opacity: 0.85;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.order-modal__body {
+  padding: 16px;
+  color: $main-black;
+}
+
+.order-modal__title {
+  font-family: $side-text;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 42px;
+  color: $main-black;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.order-modal__booth-info {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.order-modal__text-info {
+  width: 200px;
+  margin-right: 16px;
+}
+
+.order-modal__booth-title {
+  margin: 0;
+  margin-bottom: 2px;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.order-modal__booth-size {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.order-modal__size {
+  color: $faq-text-grey;
+}
+
+.order-modal__booth-price {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.order-modal__duration-select {
+  border-radius: 6px;
+  min-width: 82px;
+  border: 1px solid $footer-border-grey;
+  padding: 0 8px;
+  margin-bottom: 32px;
+}
+
+.order-modal__options-list {
+  margin-bottom: 16px;
+  border-bottom: 1px solid $border-gray;
+  padding-bottom: 16px;
+}
+
+.order-modal__options-item {
+  display: flex;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 32px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & p {
+    width: 200px;
+    margin-right: 16px;
+  }
+}
+
+.order-modal__price-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+
+.order-modal__price-text {
+  width: 188px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.order-modal__total-price {
+  font-family: $side-text;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+}
+
+.order-modal__phone-input {
+  min-height: 34px;
+  width: 49%;
+  padding-left: 8px;
+  padding-right: 165px;
+  margin-bottom: 12px;
+
+  border: 1px solid $main-red;
+  border-radius: 6px;
+}
+
+.order-modal__call-options {
+  position: absolute;
+  right: 19px;
+  bottom: 71px;
+  height: 32px;
+
+  background-color: $select-background;
+  border: none;
+  border-radius: 6px;
+  padding: 0 8px;
+  outline: none;
+}
