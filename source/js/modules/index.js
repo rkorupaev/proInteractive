@@ -1,4 +1,6 @@
 // youtube lazyload
+import {getRandomInt} from "./utils";
+
 const videos = document.querySelectorAll('.video-modal__video-placeholder');
 
 const generateUrl = (id) => {
@@ -27,7 +29,7 @@ videos.forEach(el => {
   const videoId = videoHref.substring(deletedLength, videoHref.length);
 
   const placeholderImg = el.querySelector('.video-placeholder__image');
-  const youtubeImgSrc = 'https://i.ytimg.com/vi/' + videoId + '/default.jpg';
+  const youtubeImgSrc = 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
   placeholderImg.setAttribute('src', youtubeImgSrc);
   const mainBodyVideoBlockPlaceHolder = document.querySelector(`.video-block__inner-block`);
   mainBodyVideoBlockPlaceHolder.style.backgroundImage = `url(` + youtubeImgSrc + `)`;
@@ -99,6 +101,29 @@ for (let i = 0; i < 3; i++) {
 
   block.append(card);
 }
+
+//mock price generator
+const cardTotalPrice = document.querySelectorAll(`.price-block__price span`);
+cardTotalPrice.forEach(item => {
+  item.textContent = getRandomInt(15000, 20000);
+});
+
+//get card price
+const extraOptionsList = document.querySelectorAll(`.extra-options__list`);
+
+extraOptionsList.forEach((list, index) => {
+  const DEFAULT_PRICE = parseInt(cardTotalPrice[index].textContent);
+  list.addEventListener('click', (evt) => {
+    if (evt.target.className === `extra-option__item-checkbox`) {
+      let totalExtraOptionsPrice = 0;
+      const checkedOptions = list.querySelectorAll(`input[type="checkbox"]:checked`);
+      checkedOptions.forEach(item => {
+        totalExtraOptionsPrice += parseInt(item.value, 10);
+      });
+      cardTotalPrice[index].textContent = DEFAULT_PRICE + totalExtraOptionsPrice;
+    }
+  });
+});
 
 // rent time activation
 const rentTimeButtonBlock = document.querySelectorAll(`.rent-time__list`);
@@ -185,22 +210,4 @@ showMoreNewsButton.addEventListener('click', (evt) => {
   if (MAX_NEWS_LENGTH <= newsLength + NEWS_PER_CLICK) {
     showMoreNewsButton.style.display = `none`;
   }
-});
-
-//get card price
-const DEFAULT_PRICE = 17000;
-const extraOptionsList = document.querySelectorAll(`.extra-options__list`);
-const cardTotalPrice = document.querySelectorAll(`.price-block__price span`);
-
-extraOptionsList.forEach((list, index) => {
-  list.addEventListener('click', (evt) => {
-    if (evt.target.className === `extra-option__item-checkbox`) {
-      let totalExtraOptionsPrice = 0;
-      const checkedOptions = list.querySelectorAll(`input[type="checkbox"]:checked`);
-      checkedOptions.forEach(item => {
-        totalExtraOptionsPrice += parseInt(item.value, 10);
-      });
-      cardTotalPrice[index].textContent = DEFAULT_PRICE + totalExtraOptionsPrice;
-    }
-  });
 });
