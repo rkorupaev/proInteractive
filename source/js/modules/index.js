@@ -79,8 +79,8 @@ selectArrow.addEventListener(`click`, evt => {
 });
 
 // map photo-booth card
+const photoBoothBlock = document.querySelector(`.photo-booth__list`);
 for (let i = 0; i < 3; i++) {
-  const block = document.querySelector(`.photo-booth__list`);
   const card = document.createElement(`li`);
 
   card.classList.add(`photo-booth__item`);
@@ -99,7 +99,7 @@ for (let i = 0; i < 3; i++) {
     extraOptionsBlock.append(extraOption);
   }
 
-  block.append(card);
+  photoBoothBlock.append(card);
 }
 
 //mock price generator
@@ -138,6 +138,36 @@ rentTimeButtonBlock.forEach(item => {
     }
   });
 });
+
+// filter setup
+selectList.addEventListener(`click`, (evt) => {
+  filterPhotoBooths(evt.target.attributes.value.value);
+});
+
+const filterPhotoBooths = (value) => {
+  const photoBoothItems = document.querySelectorAll(`.photo-booth__item`);
+  let mappedArray = [];
+  let filteredArray = [];
+  photoBoothItems.forEach((item, index) => {
+    const itemPrice = item.querySelector(`.price-block__price span`);
+    let obj = {price: itemPrice.textContent, item: item}
+    mappedArray.push(obj);
+  });
+  switch (value) {
+    case `priceup`:
+      mappedArray.sort((a, b) => parseInt(b.price) - parseInt(a.price));
+      break;
+    case `pricedown`:
+      mappedArray.sort((a, b) => parseInt(a.price) - parseInt(b.price));
+      break;
+  }
+
+  mappedArray.map(item => filteredArray.push(item.item));
+  photoBoothBlock.innerHTML = '';
+  for (let i = 0; i < filteredArray.length; i++) {
+    photoBoothBlock.append(filteredArray[i]);
+  }
+}
 
 // swiper initiation
 import SwiperCore, {Navigation, Pagination} from 'swiper/core';
