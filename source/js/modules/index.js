@@ -155,10 +155,10 @@ const filterPhotoBooths = (value) => {
   });
   switch (value) {
     case `priceup`:
-      mappedArray.sort((a, b) => parseInt(b.price) - parseInt(a.price));
+      mappedArray.sort((a, b) => parseInt(a.price) - parseInt(b.price));
       break;
     case `pricedown`:
-      mappedArray.sort((a, b) => parseInt(a.price) - parseInt(b.price));
+      mappedArray.sort((a, b) => parseInt(b.price) - parseInt(a.price));
       break;
   }
 

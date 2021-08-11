@@ -178,21 +178,26 @@
       <div class="gallery-modal__body">
         <div class="gallery-modal__slider slider swiper-container">
           <ul class="slider__wrapper swiper-wrapper">
-            <li class="gallery-modal__slider-item slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo"
-                                                       width="320"
-                                                       height="320"></li>
-            <li class="gallery-modal__slider-item slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo"
-                                                       width="320"
-                                                       height="320"></li>
-            <li class="gallery-modal__slider-item slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo"
-                                                       width="320"
-                                                       height="320"></li>
-            <li class="gallery-modal__slider-item slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo"
-                                                       width="320"
-                                                       height="320"></li>
-            <li class="gallery-modal__slider-item slider__item swiper-slide"><img src="../img/modal-gallery-slider-image.png" alt="event photo"
-                                                       width="320"
-                                                       height="320"></li>
+            <li class="gallery-modal__slider-item slider__item swiper-slide"><img
+              src="../img/modal-gallery-slider-image.png" alt="event photo"
+              width="320"
+              height="320"></li>
+            <li class="gallery-modal__slider-item slider__item swiper-slide"><img
+              src="../img/modal-gallery-slider-image.png" alt="event photo"
+              width="320"
+              height="320"></li>
+            <li class="gallery-modal__slider-item slider__item swiper-slide"><img
+              src="../img/modal-gallery-slider-image.png" alt="event photo"
+              width="320"
+              height="320"></li>
+            <li class="gallery-modal__slider-item slider__item swiper-slide"><img
+              src="../img/modal-gallery-slider-image.png" alt="event photo"
+              width="320"
+              height="320"></li>
+            <li class="gallery-modal__slider-item slider__item swiper-slide"><img
+              src="../img/modal-gallery-slider-image.png" alt="event photo"
+              width="320"
+              height="320"></li>
           </ul>
           <div class="slider__pagination swiper-pagination"></div>
         </div>
@@ -214,17 +219,53 @@
     </div>
   </div>
 </section>
-<template id="extra-option">
-    <label class="extra-options__item-label">
-      <img class="extra-options__item-image" src="./img/photo_option.png" alt="photo-booth photo" width="60"
-           height="60">
-      <div class="extra-options__text-wrapper">
-        <h2 class="extra-options__item-title">Разработка макета рамки</h2>
-        <p class="extra-options__item-price">от 17 500 ₽</p>
+<section id="order-modal" class="order-modal" aria-modal="true">
+  <div class="order-modal__dialog">
+    <div class="order-modal__content">
+      <a href="#close" title="Close" class="order-modal__close-button">×</a>
+      <div class="order-modal__body">
+        <h2 class="order-modal__title">Ваша заявка</h2>
+        <div class="order-modal__booth-info">
+          <div class="order-modal__text-info">
+            <h3 class="order-modal__booth-title">Фотобудка с ширмой</h3>
+            <p class="order-modal__booth-size">Размер: <span class="order-modal__size">2м x 1.5м x 2 м</span></p>
+          </div>
+          <p class="order-modal__booth-price">17500 ₽</p>
+        </div>
+        <select class="order-modal__duration-select" name="duration" id="duration">
+          <option value="1">1 день</option>
+          <option value="2">2 дня</option>
+          <option value="3">3 дня</option>
+        </select>
+        <ul class="order-modal__options-list">
+          <li class="order-modal__options-item">Chosen option 1 <span>17500 ₽</span></li>
+          <li class="order-modal__options-item">Chosen option 3 <span>17500 ₽</span></li>
+          <li class="order-modal__options-item">Chosen option 4 <span>17500 ₽</span></li>
+        </ul>
+        <div class="order-modal__price-wrapper">
+          <p class="order-modal__price-text">Итого: <span class="order-modal__total-price">17500 ₽</span></p>
+        </div>
+        <input type="text" class="order-modal__phone-input">
+        <select name="call-options" id="call-options" class="order-modal__call-options">
+          <option value="callme">Позвоните мне</option>
+          <option value="textme">Напишите мне</option>
+        </select>
+        <a href="#close" title="Close" class="order-modal__close-button order-modal__close-button--red">Отправить заявку</a>
       </div>
-      <input class="extra-option__item-checkbox" type="checkbox" value="">
-      <span class="extra-option__item-custom-checkbox"></span>
-    </label>
+    </div>
+  </div>
+</section>
+<template id="extra-option">
+  <label class="extra-options__item-label">
+    <img class="extra-options__item-image" src="./img/photo_option.png" alt="photo-booth photo" width="60"
+         height="60">
+    <div class="extra-options__text-wrapper">
+      <h2 class="extra-options__item-title">Разработка макета рамки</h2>
+      <p class="extra-options__item-price">от 17 500 ₽</p>
+    </div>
+    <input class="extra-option__item-checkbox" type="checkbox" value="">
+    <span class="extra-option__item-custom-checkbox"></span>
+  </label>
 </template>
 <template id="photo-booth-card">
   <div class="photo-booth__slider slider swiper-container">
@@ -276,7 +317,7 @@
   </div>
   <div class="photo-booth__price-block price-block">
     <p class="price-block__price"><span>17000</span> ₽</p>
-    <a href="#mobile-order" class="price-block__button">Оставить заявку</a>
+    <a href="#order-modal" class="price-block__button">Оставить заявку</a>
   </div>
 </template>
 <template id="news-card">
