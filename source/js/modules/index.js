@@ -241,3 +241,36 @@ showMoreNewsButton.addEventListener('click', (evt) => {
     showMoreNewsButton.style.display = `none`;
   }
 });
+
+
+//map mobile order
+const referenceElement = document.querySelector(`.order-modal__title`);
+const orderBody = document.createElement(`div`);
+orderBody.classList.add(`order-modal__dynamic-data`);
+orderBody.append(document.getElementById(`mobile-order-card`).content.cloneNode(true));
+
+const orderButton = document.querySelectorAll(`.price-block__button`);
+orderButton.forEach(button => {
+  button.addEventListener('click', (evt) => {
+    const target = evt.target.parentElement.parentElement;
+    const totalPrice = target.querySelector(`.price-block__price span`).textContent;
+    orderBody.querySelector(`.order-modal__total-price`).textContent = totalPrice + ` ₽`;
+    const extraOptionsList = target.querySelector(`.extra-options__list`);
+    const checkedOptions = extraOptionsList.querySelectorAll(`input[type="checkbox"]:checked`);
+
+    if (checkedOptions.length > 0) {
+      const checkedOptionsList = document.querySelector(`.order-modal__options-list`);
+      checkedOptions.forEach(item => {
+        const checkedOption = document.createElement(`li`);
+        checkedOption.classList.add(`order-modal__options-item`);
+        checkedOption.append(document.getElementById(`order-modal-checked-option`).content.cloneNode(true));
+
+        checkedOptionsList.append(checkedOption);
+      });
+    }
+  });
+});
+
+
+referenceElement.after(orderBody);
+

@@ -206,26 +206,6 @@
       <a href="#close" title="Close" class="order-modal__close-button">×</a>
       <div class="order-modal__body">
         <h2 class="order-modal__title">Ваша заявка</h2>
-        <div class="order-modal__booth-info">
-          <div class="order-modal__text-info">
-            <h3 class="order-modal__booth-title">Фотобудка с ширмой</h3>
-            <p class="order-modal__booth-size">Размер: <span class="order-modal__size">2м x 1.5м x 2 м</span></p>
-          </div>
-          <p class="order-modal__booth-price">17500 ₽</p>
-        </div>
-        <select class="order-modal__duration-select" name="duration" id="duration">
-          <option value="1">1 день</option>
-          <option value="2">2 дня</option>
-          <option value="3">3 дня</option>
-        </select>
-        <ul class="order-modal__options-list">
-          <li class="order-modal__options-item"><p>Chosen option 1 </p><span>17500 ₽</span></li>
-          <li class="order-modal__options-item"><p>Chosen option 1 </p><span>17500 ₽</span></li>
-          <li class="order-modal__options-item"><p>Chosen option 1 </p><span>17500 ₽</span></li>
-        </ul>
-        <div class="order-modal__price-wrapper">
-          <p class="order-modal__price-text">Итого: </p><span class="order-modal__total-price">17500 ₽</span>
-        </div>
         <input type="text" class="order-modal__phone-input" id="phone-mask" placeholder="+7 (000) 000 00 00">
         <select name="call-options" id="call-options" class="order-modal__call-options">
           <option value="callme">Позвоните мне</option>
@@ -233,6 +213,7 @@
         </select>
         <a href="#close" title="Close" class="order-modal__close-button order-modal__close-button--red">Отправить
           заявку</a>
+
       </div>
     </div>
   </div>
@@ -307,6 +288,31 @@
       <p class="news__date">20 Марта 2021</p>
     </div>
   </a>
+</template>
+<template id="mobile-order-card">
+  <div class="order-modal__booth-info">
+    <div class="order-modal__text-info">
+      <h3 class="order-modal__booth-title">Фотобудка с ширмой</h3>
+      <p class="order-modal__booth-size">Размер: <span class="order-modal__size">2м x 1.5м x 2 м</span></p>
+    </div>
+    <p class="order-modal__booth-price">17500 ₽</p>
+  </div>
+  <select class="order-modal__duration-select" name="duration" id="duration">
+    <option value="1">1 день</option>
+    <option value="2">2 дня</option>
+    <option value="3">3 дня</option>
+  </select>
+  <ul class="order-modal__options-list">
+<!--    <li class="order-modal__options-item"><p>Chosen option 1 </p><span>17500 ₽</span></li>-->
+<!--    <li class="order-modal__options-item"><p>Chosen option 1 </p><span>17500 ₽</span></li>-->
+<!--    <li class="order-modal__options-item"><p>Chosen option 1 </p><span>17500 ₽</span></li>-->
+  </ul>
+  <div class="order-modal__price-wrapper">
+    <p class="order-modal__price-text">Итого: </p><span class="order-modal__total-price">17500 ₽</span>
+  </div>
+</template>
+<template id="order-modal-checked-option">
+  <p>Chosen option 1 </p><span>17500 ₽</span>
 </template>
 <script src="js/vendor.min.js"></script>
 <script src="js/main.min.js"></script>
