@@ -103,9 +103,14 @@ for (let i = 0; i < 3; i++) {
 }
 
 //mock price generator
-const cardTotalPrice = document.querySelectorAll(`.price-block__price span`);
+let cardTotalPrice = document.querySelectorAll(`.price-block__price span`);
 cardTotalPrice.forEach(item => {
   item.textContent = getRandomInt(15000, 20000);
+});
+
+let defaultBoothPrice = [];
+cardTotalPrice.forEach(item => {
+  defaultBoothPrice.push(item.textContent);
 });
 
 //get card price
@@ -124,6 +129,64 @@ extraOptionsList.forEach((list, index) => {
     }
   });
 });
+
+
+//map mobile order
+const referenceElement = document.querySelector(`.order-modal__title`);
+const orderBody = document.createElement(`div`);
+orderBody.classList.add(`order-modal__dynamic-data`);
+orderBody.append(document.getElementById(`mobile-order-card`).content.cloneNode(true));
+
+const nodes = Array.prototype.slice.call(document.querySelector(`.photo-booth__list`).children);
+
+const orderButton = document.querySelectorAll(`.price-block__button`);
+orderButton.forEach(button => {
+  button.addEventListener('click', (evt) => {
+    const target = evt.target.parentElement.parentElement;
+    const index = nodes.indexOf(target);
+    const boothDefaultPrice = orderBody.querySelector(`.order-modal__booth-price`);
+    boothDefaultPrice.textContent = defaultBoothPrice[0] + ` ₽`;
+
+
+    const totalPrice = target.querySelector(`.price-block__price span`).textContent;
+    orderBody.querySelector(`.order-modal__total-price`).textContent = totalPrice + ` ₽`;
+    const extraOptionsList = target.querySelector(`.extra-options__list`);
+    const checkedOptions = extraOptionsList.querySelectorAll(`input[type="checkbox"]:checked`);
+    const checkedOptionsList = document.querySelector(`.order-modal__options-list`);
+    checkedOptionsList.innerHTML = ``;
+
+
+    //map extra options list in mobile order
+    if (checkedOptions.length > 0) {
+      checkedOptions.forEach(item => {
+        const checkedOption = document.createElement(`li`);
+        checkedOption.classList.add(`order-modal__options-item`);
+        checkedOption.append(document.getElementById(`order-modal-checked-option`).content.cloneNode(true));
+        checkedOption.querySelector(`.order-modal__options-item span`).textContent = item.value + ` ₽`;
+        checkedOption.querySelector(`.order-modal__options-item p`).textContent = item.parentElement.querySelector(`.extra-options__item-title`).textContent;
+        ;
+
+        checkedOptionsList.append(checkedOption);
+      });
+    }
+
+    getTotalPriceDurationDep();
+  });
+});
+
+referenceElement.after(orderBody);
+
+//multiply total price by day chosen
+const getTotalPriceDurationDep = () => {
+  const daysDurationSelect = document.querySelector(`.order-modal__duration-select`);
+  let orderTotalPrice = orderBody.querySelector(`.order-modal__total-price`);
+  const orderDefaultPrice = parseInt(orderTotalPrice.textContent)
+
+  daysDurationSelect.addEventListener('change', (evt) => {
+    orderTotalPrice.textContent = orderDefaultPrice * evt.target.value;
+  });
+}
+
 
 // rent time activation
 const rentTimeButtonBlock = document.querySelectorAll(`.rent-time__list`);
@@ -240,52 +303,3 @@ showMoreNewsButton.addEventListener('click', (evt) => {
     showMoreNewsButton.style.display = `none`;
   }
 });
-
-//map mobile order
-const referenceElement = document.querySelector(`.order-modal__title`);
-const orderBody = document.createElement(`div`);
-orderBody.classList.add(`order-modal__dynamic-data`);
-orderBody.append(document.getElementById(`mobile-order-card`).content.cloneNode(true));
-const photoBoothDefaultValueList = document.querySelectorAll(`.price-block__price span`);
-console.log(photoBoothDefaultValueList);
-
-
-const orderButton = document.querySelectorAll(`.price-block__button`);
-orderButton.forEach(button => {
-  button.addEventListener('click', (evt) => {
-    const target = evt.target.parentElement.parentElement;
-    const totalPrice = target.querySelector(`.price-block__price span`).textContent;
-    orderBody.querySelector(`.order-modal__total-price`).textContent = totalPrice + ` ₽`;
-    const extraOptionsList = target.querySelector(`.extra-options__list`);
-    const checkedOptions = extraOptionsList.querySelectorAll(`input[type="checkbox"]:checked`);
-    const checkedOptionsList = document.querySelector(`.order-modal__options-list`);
-    checkedOptionsList.innerHTML = ``;
-
-    if (checkedOptions.length > 0) {
-      checkedOptions.forEach(item => {
-        const checkedOption = document.createElement(`li`);
-        checkedOption.classList.add(`order-modal__options-item`);
-        checkedOption.append(document.getElementById(`order-modal-checked-option`).content.cloneNode(true));
-        checkedOption.querySelector(`.order-modal__options-item span`).textContent = item.value + ` ₽`;
-        const optionTextName = item.parentElement.querySelector(`.extra-options__item-title`).textContent;
-        checkedOption.querySelector(`.order-modal__options-item p`).textContent = optionTextName;
-
-        checkedOptionsList.append(checkedOption);
-      });
-    }
-    getTotalPriceDurationDep();
-  });
-});
-
-referenceElement.after(orderBody);
-
-//multiply total price by day chosen
-const getTotalPriceDurationDep = () => {
-  const daysDurationSelect = document.querySelector(`.order-modal__duration-select`);
-  let orderTotalPrice = orderBody.querySelector(`.order-modal__total-price`);
-  const orderDefaultPrice = parseInt(orderTotalPrice.textContent)
-
-  daysDurationSelect.addEventListener('change', (evt) => {
-    orderTotalPrice.textContent = orderDefaultPrice * evt.target.value;
-  });
-}
