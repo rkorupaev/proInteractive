@@ -144,8 +144,8 @@ selectList.addEventListener(`click`, (evt) => {
   filterPhotoBooths(evt.target.attributes.value.value);
 });
 
+const photoBoothItems = document.querySelectorAll(`.photo-booth__item`);
 const filterPhotoBooths = (value) => {
-  const photoBoothItems = document.querySelectorAll(`.photo-booth__item`);
   let mappedArray = [];
   let filteredArray = [];
   photoBoothItems.forEach((item, index) => {
@@ -191,7 +191,6 @@ const swiper = new SwiperCore('.swiper-container', {
     prevEl: '.swiper-button-prev',
   }
 });
-
 
 //faq setup
 const faqItemsList = document.querySelectorAll(`.faq__item`);
@@ -242,12 +241,14 @@ showMoreNewsButton.addEventListener('click', (evt) => {
   }
 });
 
-
 //map mobile order
 const referenceElement = document.querySelector(`.order-modal__title`);
 const orderBody = document.createElement(`div`);
 orderBody.classList.add(`order-modal__dynamic-data`);
 orderBody.append(document.getElementById(`mobile-order-card`).content.cloneNode(true));
+const photoBoothDefaultValueList = document.querySelectorAll(`.price-block__price span`);
+console.log(photoBoothDefaultValueList);
+
 
 const orderButton = document.querySelectorAll(`.price-block__button`);
 orderButton.forEach(button => {
@@ -257,20 +258,34 @@ orderButton.forEach(button => {
     orderBody.querySelector(`.order-modal__total-price`).textContent = totalPrice + ` ₽`;
     const extraOptionsList = target.querySelector(`.extra-options__list`);
     const checkedOptions = extraOptionsList.querySelectorAll(`input[type="checkbox"]:checked`);
+    const checkedOptionsList = document.querySelector(`.order-modal__options-list`);
+    checkedOptionsList.innerHTML = ``;
 
     if (checkedOptions.length > 0) {
-      const checkedOptionsList = document.querySelector(`.order-modal__options-list`);
       checkedOptions.forEach(item => {
         const checkedOption = document.createElement(`li`);
         checkedOption.classList.add(`order-modal__options-item`);
         checkedOption.append(document.getElementById(`order-modal-checked-option`).content.cloneNode(true));
+        checkedOption.querySelector(`.order-modal__options-item span`).textContent = item.value + ` ₽`;
+        const optionTextName = item.parentElement.querySelector(`.extra-options__item-title`).textContent;
+        checkedOption.querySelector(`.order-modal__options-item p`).textContent = optionTextName;
 
         checkedOptionsList.append(checkedOption);
       });
     }
+    getTotalPriceDurationDep();
   });
 });
 
-
 referenceElement.after(orderBody);
 
+//multiply total price by day chosen
+const getTotalPriceDurationDep = () => {
+  const daysDurationSelect = document.querySelector(`.order-modal__duration-select`);
+  let orderTotalPrice = orderBody.querySelector(`.order-modal__total-price`);
+  const orderDefaultPrice = parseInt(orderTotalPrice.textContent)
+
+  daysDurationSelect.addEventListener('change', (evt) => {
+    orderTotalPrice.textContent = orderDefaultPrice * evt.target.value;
+  });
+}
