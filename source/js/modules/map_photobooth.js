@@ -125,10 +125,10 @@ export const mapPhotoBooth = () => {
       mappedArray.push(obj);
     });
     switch (value) {
-      case `priceup`:
+      case `1`:
         mappedArray.sort((a, b) => parseInt(a.price) - parseInt(b.price));
         break;
-      case `pricedown`:
+      case `2`:
         mappedArray.sort((a, b) => parseInt(b.price) - parseInt(a.price));
         break;
     }
