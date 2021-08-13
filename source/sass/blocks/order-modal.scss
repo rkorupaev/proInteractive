@@ -54,8 +54,10 @@
 
   &--red {
     position: relative;
-    width: 100%;
-    min-height: 40px;
+    width: 92.7%;
+    min-height: 20px;
+    padding: 10px 12px;
+    height: auto;
 
     font-family: $side-text;
     font-weight: bold;
@@ -184,12 +186,16 @@
   line-height: 42px;
 }
 
+.order-modal__input-wrapper {
+  position: relative;
+  margin-bottom: 12px;
+}
+
 .order-modal__phone-input {
   min-height: 34px;
   width: 49%;
   padding-left: 8px;
   padding-right: 165px;
-  margin-bottom: 12px;
 
   border: 1px solid $main-red;
   border-radius: 6px;
@@ -197,8 +203,8 @@
 
 .order-modal__call-options {
   position: absolute;
-  right: 19px;
-  bottom: 71px;
+  right: 0;
+  bottom: 3px;
   height: 32px;
 
   background-color: $select-background;

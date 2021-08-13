@@ -36,10 +36,14 @@
       <p class="features-block__text">Lorem ipsum dolor sit amet, consectetur <span class="features-block__text-red">adipiscing elit</span>,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <ul class="features-block__list">
-        <li class="features-block__item"><span class="features-block__item-image features-block__item-image--infinity"></span><p>Безлимитная печать фото</p></li>
-        <li class="features-block__item"><span class="features-block__item-image features-block__item-image--mustache"></span><p>Фотореквизит в наличии</p></li>
-        <li class="features-block__item"><span class="features-block__item-image features-block__item-image--photos"></span><p>Фотоотчет в электронном виде</p></li>
-        <li class="features-block__item features-block__item--width"><span class="features-block__item-image features-block__item-image--prices"></span><p>Цены ниже рынка</p>
+        <li class="features-block__item"><span class="features-block__item-image features-block__item-image--infinity"></span>
+          <p>Безлимитная печать фото</p></li>
+        <li class="features-block__item"><span class="features-block__item-image features-block__item-image--mustache"></span>
+          <p>Фотореквизит в наличии</p></li>
+        <li class="features-block__item"><span class="features-block__item-image features-block__item-image--photos"></span>
+          <p>Фотоотчет в электронном виде</p></li>
+        <li class="features-block__item features-block__item--width"><span class="features-block__item-image features-block__item-image--prices"></span>
+          <p>Цены ниже рынка</p>
         </li>
       </ul>
     </section>
@@ -206,11 +210,13 @@
       <a href="#close" title="Close" class="order-modal__close-button">×</a>
       <div class="order-modal__body">
         <h2 class="order-modal__title">Ваша заявка</h2>
-        <input type="text" class="order-modal__phone-input" id="phone-mask" placeholder="+7 (000) 000 00 00">
-        <select name="call-options" id="call-options" class="order-modal__call-options">
-          <option value="callme">Позвоните мне</option>
-          <option value="textme">Напишите мне</option>
-        </select>
+        <div class="order-modal__input-wrapper">
+          <input type="text" class="order-modal__phone-input" id="phone-mask" placeholder="+7 (000) 000 00 00">
+          <select name="call-options" id="call-options" class="order-modal__call-options">
+            <option value="callme">Позвоните мне</option>
+            <option value="textme">Напишите мне</option>
+          </select>
+        </div>
         <a href="#close" title="Close" class="order-modal__close-button order-modal__close-button--red">Отправить
           заявку</a>
 
