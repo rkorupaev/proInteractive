@@ -104,7 +104,7 @@ export const mapPhotoBooth = () => {
     const orderDefaultPrice = parseInt(orderTotalPrice.textContent)
 
     daysDurationSelect.addEventListener('change', (evt) => {
-      orderTotalPrice.textContent = orderDefaultPrice * evt.target.value;
+      orderTotalPrice.textContent = orderDefaultPrice * evt.target.value + ` ₽`;
     });
   }
 
