@@ -97,11 +97,12 @@
 .extra-option__item-custom-checkbox {
   position: absolute;
   box-sizing: border-box;
-  top: 31px;
+  top: 50%;
   right: 8px;
   height: 15px;
   width: 15px;
   border: 1px solid $main-red;
   border-radius: 2px;
   transition-duration: 0.3s;
+  transform: translateY(-50%);
 }
