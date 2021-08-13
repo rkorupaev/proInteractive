@@ -74,22 +74,27 @@
   width: 320px;
 }
 
-.gallery-modal__prev {
-  left: -10px;
+.gallery-modal__prev,
+.gallery-modal__next {
+  background-color: $slider-button-background;
+  border-radius: 2px;
+  width: 40px;
+  height: 40px;
   top: 163px;
 
+
   &:after {
+    font-size: 28px;
     color: $close-button-color;
   }
 }
 
+.gallery-modal__prev {
+  left: -10px;
+}
+
 .gallery-modal__next {
   right: -10px;
-  top: 163px;
-
-  &:after {
-    color: $close-button-color;
-  }
 }
 
 .gallery-modal__text-wrapper {

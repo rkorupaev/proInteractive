@@ -66,4 +66,8 @@
   width: 100%;
   min-height: 360px;
   max-width: 375px;
+
+  & iframe {
+    border: none;
+  }
 }
